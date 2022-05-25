@@ -1,0 +1,36 @@
+{
+  "name": "linecounter",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "a simple node programm that counts lines in documents & folders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Creative-Difficulty/LineCounter.git"
+  },
+  "keywords": [
+    "counter",
+    "fs",
+    "line",
+    "file",
+    "project",
+    "util"
+  ],
+  "author": "Creative-Difficulty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Creative-Difficulty/LineCounter/issues"
+  },
+  "homepage": "https://github.com/Creative-Difficulty/LineCounter#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "cli-progress": "^3.11.1",
+    "fs": "^0.0.1-security",
+    "node-color-log": "^9.0.0",
+    "path": "^0.12.7",
+    "util": "^0.12.4"
+  }
+}
