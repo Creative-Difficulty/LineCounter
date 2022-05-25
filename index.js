@@ -51,6 +51,7 @@ if(FolderORFileData.isDirectory()) {
     logger.info("Number of files in selected directory: " + FilesinFolder.length);
     logger.info("Directory was last modified at: " + new Date(FolderORFileData.mtime * 1000))
     logger.info("Size of the directory: " + bytesToSize(FolderORFileData.size));
+    console.log("File Name  scannable   number of Lines")
     for(let i=0; i<FilesinFolder.length; i++) {
         var skipThisIteration = false;
         var FilePath = path.join(FolderORFilePath, FilesinFolder[i])
@@ -63,9 +64,9 @@ if(FolderORFileData.isDirectory()) {
             //TODO: scan files in subfolders and display a tree view
             console.log(chalk.red(FilesinFolder[i] + " is a directory, unable to scan it."));
         } else if(FileData.isFile()) {
-            //console.log(chalk.greenBright(FilesinFolder[i] + " is a file, scanning it."));
             var FileContents = await readFile(FilePath, "utf-8")
-            logger.success("File " + FilesinFolder[i] + " at path " + FolderORFilePath + " Read successfully")
+            console.log(FilesinFolder[i] + "    " + chalk.greenBright("yes") + "    " + chalk.whiteBright(FileContents.split(/\r\n|\r|\n/).length) + "   " + new Date(FileData.mtime * 1000));
+            //logger.success("File " + FilesinFolder[i] + " at path " + FolderORFilePath + " Read successfully")
             //console.log(FileContents.split(/\r\n|\r|\n/).length);
         } else {
             console.log(chalk.red(FilesinFolder[i] + " is not readable in UTF-8, unable to scan it."));
